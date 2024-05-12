@@ -31,7 +31,7 @@ typedef struct{
 }TIMER_N_INT_PTR;
 
 
-TIMER_N_INT_PTR * TIMER_ISR;
+TIMER_N_INT_PTR  TIMER_ISR;
 /*
  * Timer 0 Group
  */
@@ -51,15 +51,15 @@ void Set_CallBack_TIMER_0_OVF_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_0_OVF_INT = ptr;
+		TIMER_ISR.TIMER_0_OVF_INT = ptr;
 	}
 }
 void __vector_11 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_11 (void)
 {
-	if(TIMER_ISR->TIMER_0_OVF_INT != NULL)
+	if(TIMER_ISR.TIMER_0_OVF_INT != NULL)
 	{
-		TIMER_ISR->TIMER_0_OVF_INT();
+		TIMER_ISR.TIMER_0_OVF_INT();
 	}
 }
 
@@ -67,15 +67,15 @@ void Set_CallBack_TIMER_0_OC_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_0_OC_INT = ptr;
+		TIMER_ISR.TIMER_0_OC_INT = ptr;
 	}
 }
 void __vector_10 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_10 (void)
 {
-	if(TIMER_ISR->TIMER_0_OC_INT != NULL)
+	if(TIMER_ISR.TIMER_0_OC_INT != NULL)
 	{
-		TIMER_ISR->TIMER_0_OC_INT();
+		TIMER_ISR.TIMER_0_OC_INT();
 	}
 }
 /*
@@ -94,15 +94,15 @@ void Set_CallBack_TIMER_1_OVF_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_1_OVF_INT = ptr;
+		TIMER_ISR.TIMER_1_OVF_INT = ptr;
 	}
 }
 void __vector_9 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_9 (void)
 {
-	if(TIMER_ISR->TIMER_1_OVF_INT != NULL)
+	if(TIMER_ISR.TIMER_1_OVF_INT != NULL)
 	{
-		TIMER_ISR->TIMER_1_OVF_INT();
+		TIMER_ISR.TIMER_1_OVF_INT();
 	}
 }
 
@@ -110,15 +110,15 @@ void Set_CallBack_TIMER_1_OCA_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_1_OCA_INT = ptr;
+		TIMER_ISR.TIMER_1_OCA_INT = ptr;
 	}
 }
 void __vector_7 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_7 (void)
 {
-	if(TIMER_ISR->TIMER_1_OCA_INT != NULL)
+	if(TIMER_ISR.TIMER_1_OCA_INT != NULL)
 	{
-		TIMER_ISR->TIMER_1_OCA_INT();
+		TIMER_ISR.TIMER_1_OCA_INT();
 	}
 }
 
@@ -127,15 +127,15 @@ void Set_CallBack_TIMER_1_OCB_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_1_OCB_INT = ptr;
+		TIMER_ISR.TIMER_1_OCB_INT = ptr;
 	}
 }
 void __vector_8 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_8 (void)
 {
-	if(TIMER_ISR->TIMER_1_OCB_INT != NULL)
+	if(TIMER_ISR.TIMER_1_OCB_INT != NULL)
 	{
-		TIMER_ISR->TIMER_1_OCB_INT();
+		TIMER_ISR.TIMER_1_OCB_INT();
 	}
 }
 
@@ -144,15 +144,15 @@ void Set_CallBack_TIMER_1_CAPT_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_1_CAPT_INT = ptr;
+		TIMER_ISR.TIMER_1_CAPT_INT = ptr;
 	}
 }
 void __vector_6 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_6 (void)
 {
-	if(TIMER_ISR->TIMER_1_CAPT_INT != NULL)
+	if(TIMER_ISR.TIMER_1_CAPT_INT != NULL)
 	{
-		TIMER_ISR->TIMER_1_CAPT_INT();
+		TIMER_ISR.TIMER_1_CAPT_INT();
 	}
 }
 
@@ -171,15 +171,15 @@ void Set_CallBack_TIMER_2_OVF_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_2_OVF_INT = ptr;
+		TIMER_ISR.TIMER_2_OVF_INT = ptr;
 	}
 }
 void __vector_5 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_5 (void)
 {
-	if(TIMER_ISR->TIMER_2_OVF_INT != NULL)
+	if(TIMER_ISR.TIMER_2_OVF_INT != NULL)
 	{
-		TIMER_ISR->TIMER_2_OVF_INT();
+		TIMER_ISR.TIMER_2_OVF_INT();
 	}
 }
 
@@ -188,15 +188,15 @@ void Set_CallBack_TIMER_2_OC_INT(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		TIMER_ISR->TIMER_2_OC_INT = ptr;
+		TIMER_ISR.TIMER_2_OC_INT = ptr;
 	}
 }
 void __vector_4 (void)  __attribute__ ((signal,__INTR_ATTRS));
 void __vector_4 (void)
 {
-	if(TIMER_ISR->TIMER_2_OC_INT != NULL)
+	if(TIMER_ISR.TIMER_2_OC_INT != NULL)
 	{
-		TIMER_ISR->TIMER_2_OC_INT();
+		TIMER_ISR.TIMER_2_OC_INT();
 	}
 }
 
@@ -530,10 +530,10 @@ void PWM_timers_init(PWM_timers_config *timer_config)
 		SET_BIT(S_REG,7);
 	}
 
-//	void Global_VidINTDisable(void)
-//	{
-//		CLR_BIT(S_REG,7);
-//	}
+	void Global_VidINTDisable(void)
+	{
+		CLR_BIT(S_REG,7);
+	}
 
 //	void Delay_voidBasyWaitMS(u16 Copy_u8Delay_ms)
 //	{

@@ -25,22 +25,22 @@ typedef struct{
 	void (*EXTINT_2)(void);
 }EXTINT_N_PTR;
 
-EXTINT_N_PTR * EXTINT_ISR;
+EXTINT_N_PTR  EXTINT_ISR;
 
 
 void Set_CallBack_EXTINT_0(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		EXTINT_ISR->EXTINT_0 = ptr;
+		EXTINT_ISR.EXTINT_0 = ptr;
 	}
 }
-void __vector_0 (void)  __attribute__ ((signal,__INTR_ATTRS));
-void __vector_0 (void)
+void __vector_1 (void)  __attribute__ ((signal,__INTR_ATTRS));
+void __vector_1 (void)
 {
-	if(EXTINT_ISR->EXTINT_0 != NULL)
+	if(EXTINT_ISR.EXTINT_0 != NULL)
 	{
-		EXTINT_ISR->EXTINT_0();
+		EXTINT_ISR.EXTINT_0();
 	}
 }
 
@@ -48,15 +48,15 @@ void Set_CallBack_EXTINT_1(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		EXTINT_ISR->EXTINT_1 = ptr;
+		EXTINT_ISR.EXTINT_1 = ptr;
 	}
 }
-void __vector_1 (void)  __attribute__ ((signal,__INTR_ATTRS));
-void __vector_1 (void)
+void __vector_2 (void)  __attribute__ ((signal,__INTR_ATTRS));
+void __vector_2 (void)
 {
-	if(EXTINT_ISR->EXTINT_1 != NULL)
+	if(EXTINT_ISR.EXTINT_1 != NULL)
 	{
-		EXTINT_ISR->EXTINT_1();
+		EXTINT_ISR.EXTINT_1();
 	}
 }
 
@@ -64,15 +64,15 @@ void Set_CallBack_EXTINT_2(void (*ptr)(void))
 {
 	if(ptr != NULL)
 	{
-		EXTINT_ISR->EXTINT_2 = ptr;
+		EXTINT_ISR.EXTINT_2 = ptr;
 	}
 }
-void __vector_2 (void)  __attribute__ ((signal,__INTR_ATTRS));
-void __vector_2 (void)
+void __vector_3 (void)  __attribute__ ((signal,__INTR_ATTRS));
+void __vector_3 (void)
 {
-	if(EXTINT_ISR->EXTINT_2 != NULL)
+	if(EXTINT_ISR.EXTINT_2 != NULL)
 	{
-		EXTINT_ISR->EXTINT_2();
+		EXTINT_ISR.EXTINT_2();
 	}
 }
 
